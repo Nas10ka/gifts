@@ -49,3 +49,7 @@
   cursor: pointer;
   margin: 10px;
 }
+.player {
+  width: 500px;
+  height: auto;
+}

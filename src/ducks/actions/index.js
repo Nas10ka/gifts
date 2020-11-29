@@ -5,5 +5,4 @@ export default Object.freeze({
   getProductsSuccess: (products) => ({ type: types.GET_PRODUCTS_SUCCESS, payload: products }),
   getVendors: () => ({ type: types.GET_VENDORS }),
   getVendorsSuccess: (vendors) => ({ type: types.GET_VENDORS_SUCCESS, payload: vendors }),
-  setCurrentProduct: product => ({ type: types.SET_CURRENT_PRODUCT, payload: product }),
 })

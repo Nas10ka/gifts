@@ -32,13 +32,12 @@ const useStyles = makeStyles({
 });
 
 const MediaCard = (props) => {
-  const { id, name, media = [], setCurrentProduct, openProduct } = props;
+  const { id, name, media = [], openProduct } = props;
   const img = media.filter((i) => i.type === "image")[0];
 
   const classes = useStyles();
 
   const goToProductDetails = () => {
-    setCurrentProduct(props);
     openProduct(id);
   }
 
@@ -48,7 +47,7 @@ const MediaCard = (props) => {
         <CardMedia
           className={classes.media}
           image={img?.url}
-          title="Contemplative Reptile"
+          title={}
         />
         <CardContent>
           <Typography gutterBottom variant="subtitle1" component="h3">
@@ -62,7 +61,7 @@ const MediaCard = (props) => {
     </Card>
   );
 };
-const Products = ({ products, vendors, setCurrentProduct, openProduct }) => {
+const Products = ({ products, vendors, openProduct }) => {
   const classes = useStyles();
 
   const p = products ? Object.values(products) : null;
@@ -129,7 +128,6 @@ const Products = ({ products, vendors, setCurrentProduct, openProduct }) => {
                     order={product?.order}
                     promotion={product?.promotion}
                     vendor={product?.vendor}
-                    setCurrentProduct={setCurrentProduct}
                     openProduct={openProduct}
                   />
                 </Grid>
@@ -147,7 +145,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  setCurrentProduct: actions.setCurrentProduct,
   openProduct: (id) => push(`/product/${id}`)
 }
 

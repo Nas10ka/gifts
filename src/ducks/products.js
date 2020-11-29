@@ -36,7 +36,6 @@ function* getProductsSaga() {
 function* getVendorsSaga() {
   try {
     const vendors = yield call(fetchData, 'http://localhost:8080/vendors', 'GET');
-    console.log(vendors);
     yield put(actions.getVendorsSuccess(vendors));
   } catch(e) {
     console.error('Get Vendors Error ', e);

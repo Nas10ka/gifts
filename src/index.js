@@ -28,9 +28,9 @@ ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
       <ConnectedRouter history={history}>
-        {/* <React.StrictMode> */}
+        <React.StrictMode>
           <App />
-        {/* </React.StrictMode> */}
+        </React.StrictMode>
       </ConnectedRouter>
     </MuiThemeProvider>
   </Provider>,

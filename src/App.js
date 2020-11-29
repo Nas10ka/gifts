@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
@@ -6,7 +6,7 @@ import routes from './routes';
 import actions from './ducks/actions/index';
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   componentDidMount() {
     this.props.getProducts();
     this.props.getVendors();
@@ -21,7 +21,7 @@ class App extends React.Component {
               key={index}
               path={route.path}
               exact={true}
-              render={render_props => <route.component {...render_props} title={route.title} />}
+              render={() => <route.component title={route.title} />}
             />
           )}
         </Switch>
