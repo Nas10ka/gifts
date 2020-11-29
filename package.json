@@ -17,7 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
-    "history": "^5.0.0",
+    "history": "^4.10.1",
     "mongoose": "^5.10.16",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",

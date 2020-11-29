@@ -43,6 +43,9 @@ const Product = props => {
             <Typography gutterBottom variant="h5" component="h2">
               {product.name}
             </Typography>
+            <Typography gutterBottom variant="h6" component="h3">
+              {product.vendor}
+            </Typography>
           </CardContent>
           </Card>
         </Grid>
