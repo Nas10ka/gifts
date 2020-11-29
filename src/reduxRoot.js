@@ -14,17 +14,17 @@ const sagaMw = createSagaMiddleware({
     console.error('@ Saga error: ', error);
   },
 });
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducers = history => combineReducers({
-  data,
   router: connectRouter(history),
+  data,
+
 });
 
 
 export const store = createStore(
   reducers(history),
-  composeEnhancers(applyMiddleware(sagaMw, routerMw)),
+  compose(applyMiddleware(routerMw, sagaMw)),
 );
 
 sagaMw.run(saga)

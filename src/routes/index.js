@@ -6,11 +6,13 @@ const routes = [
     title: 'Products',
     path: '/',
     component: Products,
+    exact: true,
   },
   {
     title: 'Product',
     path: '/product/:id',
     component: Product,
+    exact: false,
   },
 
 ];

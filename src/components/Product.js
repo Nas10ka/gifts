@@ -52,7 +52,7 @@ const Product = props => {
 
 const mapStateToProps = (state, props) => ({
   products: state.data.products,
-  id: props.match.params.id,
+  id: props?.match?.params?.id,
 });
 
 export default connect(mapStateToProps)(Product);

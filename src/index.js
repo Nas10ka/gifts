@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux'
+import { Route, Switch } from 'react-router'
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -28,9 +29,7 @@ ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
       <ConnectedRouter history={history}>
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
+        <App />
       </ConnectedRouter>
     </MuiThemeProvider>
   </Provider>,
