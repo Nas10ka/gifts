@@ -38,16 +38,21 @@
 }
 
 .MuiCard-root {
-  margin: 20px auto;
+  margin:  auto;
 }
 .MuiGrid-root.MuiGrid-container {
   padding: 20px;
-  justify-content: center;
 }
+.MuiGrid-root.MuiGrid-container .MuiGrid-item {
+  margin: 20px auto;
+}
+
 .MuiPaper-root.MuiPaper-elevation1.MuiPaper-rounded {
   padding: 10px;
   cursor: pointer;
-  margin: 10px;
+  height: 100%;
+  margin: 0;
+
 }
 .player {
   width: 500px;

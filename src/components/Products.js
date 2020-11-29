@@ -20,7 +20,9 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 345,
     margin: '20px auto',
-
+  },
+  promoted: {
+    background: 'rosybrown',
   },
   media: {
     height: 340,
@@ -29,10 +31,18 @@ const useStyles = makeStyles({
   active: {
     backgroundColor: "yellow",
   },
+  promText: {
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });
 
 const MediaCard = (props) => {
-  const { id, name, media = [], openProduct } = props;
+  const { id, name, media = [], openProduct, promotion, vendor } = props;
   const img = media.filter((i) => i.type === "image")[0];
 
   const classes = useStyles();
@@ -41,8 +51,10 @@ const MediaCard = (props) => {
     openProduct(id);
   }
 
+  const promo = promotion && !promotion?.hide;
+
   return (
-    <Card className={classes.root} onClick={goToProductDetails}>
+    <Card className={`${classes.root} ${promo ? classes.promoted : ''}`} onClick={goToProductDetails}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -53,10 +65,13 @@ const MediaCard = (props) => {
           <Typography gutterBottom variant="subtitle1" component="h3">
             {name}
           </Typography>
+          {promo ? <Typography className={classes.promText} gutterBottom variant="h6" component="h6">
+            {promotion.text}
+          </Typography> : null}
         </CardContent>
       </CardActionArea>
       <CardActions>
-        Learn More
+        {vendor}
       </CardActions>
     </Card>
   );
@@ -98,7 +113,7 @@ const Products = ({ products, vendors, openProduct }) => {
 
   return (
     <>
-      <Grid container>
+      <Grid container className={classes.center}>
         <TextField
           label="Search"
           variant="outlined"

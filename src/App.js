@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
-import routes from './routes';
+// import routes from './routes';
 import actions from './ducks/actions/index';
 import Product from './components/Product';
 import Products from './components/Products';
